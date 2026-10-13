@@ -23,7 +23,9 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        // Aliyun mirror for Google Maven (Android artifacts) — dl.google.com blocked.
+        // Canonical Google Maven (works on CI and most networks).
+        google()
+        // Aliyun mirror fallback for restricted networks.
         maven("https://maven.aliyun.com/repository/google")
         maven("https://repo1.maven.org/maven2")
     }
