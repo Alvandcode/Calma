@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Calma mark: three concentric breathing rings on the 108dp adaptive canvas.
+     Artwork is kept inside the inner 72dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#7FD1C4"
+        android:fillAlpha="0.20"
+        android:pathData="M54,22 m-32,0 a32,32 0 1,0 64,0 a32,32 0 1,0 -64,0"
+        android:strokeWidth="0" />
+
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#7FD1C4"
+        android:strokeAlpha="0.45"
+        android:strokeWidth="2.6"
+        android:strokeLineCap="round"
+        android:pathData="M54,54 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" />
+
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#A6E3DA"
+        android:strokeAlpha="0.70"
+        android:strokeWidth="3.0"
+        android:strokeLineCap="round"
+        android:pathData="M54,54 m-17,0 a17,17 0 1,0 34,0 a17,17 0 1,0 -34,0" />
+
+    <path
+        android:fillColor="#E6F5F2"
+        android:pathData="M54,54 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0" />
+</vector>

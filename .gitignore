@@ -1,0 +1,37 @@
+# Built by Gradle / Android Studio
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Android build output
+/app/build/
+/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+output.json
+
+# Keystores — never commit signing material
+*.jks
+*.keystore
+keystore.properties
+
+# Gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.hprof
+captures/
+.externalNativeBuild/
+
+# OS
+Thumbs.db

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Splash / window background only. The real colour system lives in Compose
+        (see core/ui/theme/Color.kt), driven by Material 3 ColorScheme.
+        These values exist so the window looks correct before Compose draws the
+        first frame, which avoids a white flash in dark mode.
+    -->
+    <style name="Theme.Calma" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+</resources>

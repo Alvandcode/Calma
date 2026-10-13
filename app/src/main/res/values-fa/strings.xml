@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="nav_home">خانه</string>
+    <string name="nav_focus">تمرکز</string>
+    <string name="nav_breathe">آرامش</string>
+    <string name="nav_sounds">صداها</string>
+    <string name="nav_stats">پیشرفت</string>
+
+    <string name="cd_open_settings">باز کردن تنظیمات</string>
+    <string name="cd_back">بازگشت</string>
+    <string name="cd_close">بستن</string>
+
+    <!-- ============ Home ============ -->
+    <string name="home_greeting_morning">صبح بخیر</string>
+    <string name="home_greeting_afternoon">ظهر بخیر</string>
+    <string name="home_greeting_evening">عصر بخیر</string>
+    <string name="home_tagline">یک لحظه آرام همین حالا هم هست.</string>
+    <string name="home_quick_calm">آرامش فوری</string>
+    <string name="home_quick_calm_caption">بازگشت آرام در ۲ دقیقه</string>
+    <string name="home_daily_summary">امروز تا این لحظه</string>
+    <string name="home_stat_focus">زمان تمرکز</string>
+    <string name="home_stat_sessions">جلسه</string>
+    <string name="home_stat_calm">تمرین آرامش</string>
+    <string name="home_stat_checkin">ثبت روزانه</string>
+    <string name="home_start_focus">شروع تمرکز</string>
+    <string name="home_breathe_now">تنفس</string>
+    <string name="home_sound_mixer">میکسر صدا</string>
+    <string name="home_daily_checkin">امروز چطور بود؟</string>
+    <string name="home_suggestion_title">پیشنهاد امروز</string>
+    <string name="home_no_activity_yet">امروز هنوز فعالیتی ثبت نشده. با یک دقیقه آرامش شروع کنید.</string>
+
+    <!-- ============ Focus ============ -->
+    <string name="focus_title">تایمر تمرکز</string>
+    <string name="focus_mode_pomodoro">پومودورو</string>
+    <string name="focus_mode_custom">سفارشی</string>
+    <string name="focus_duration_label">مدت تمرکز</string>
+    <string name="focus_break_label">مدت استراحت</string>
+    <string name="focus_minutes">%1$d دقیقه</string>
+    <string name="focus_custom_minutes">دقیقه دلخواه</string>
+    <string name="focus_start">شروع</string>
+    <string name="focus_pause">توقف</string>
+    <string name="focus_resume">ادامه</string>
+    <string name="focus_cancel">لغو</string>
+    <string name="focus_finish">پایان</string>
+    <string name="focus_break_time">استراحت</string>
+    <string name="focus_phase_focus">تمرکز</string>
+    <string name="focus_phase_break">استراحت</string>
+    <string name="focus_phase_break_over">استراحت تمام شد</string>
+    <string name="focus_completed_title">جلسه تمام شد</string>
+    <string name="focus_completed_message">%1$s تمرکز کردید. یک استراحت کوتاه داشته باشید.</string>
+    <string name="focus_canceled">جلسه لغو شد</string>
+    <string name="focus_elapsed">%1$s تمرکز</string>
+    <string name="focus_break_remaining">استراحت تا %1$s</string>
+    <string name="focus_presets">زمان‌های پیشنهادی</string>
+    <string name="focus_running">در حال اجرا</string>
+    <string name="focus_notification_channel">جلسات تمرکز</string>
+    <string name="focus_notification_channel_desc">نمایش زمان باقی‌مانده هنگام اجرای جلسه تمرکز.</string>
+    <string name="focus_notification_title">جلسه تمرکز</string>
+    <string name="focus_notification_text">%1$s باقی مانده</string>
+    <string name="focus_notification_done">جلسه پایان یافت</string>
+    <string name="focus_notification_done_text">%1$s تمرکز کامل شد.</string>
+
+    <!-- ============ Breathing ============ -->
+    <string name="breathe_title">تمرین تنفس</string>
+    <string name="breathe_pattern">الگو</string>
+    <string name="breathe_duration">مدت</string>
+    <string name="breathe_start">شروع</string>
+    <string name="breathe_pause">توقف</string>
+    <string name="breathe_resume">ادامه</string>
+    <string name="breathe_stop">پایان</string>
+    <string name="breathe_phase_inhale">دم بگیرید</string>
+    <string name="breathe_phase_hold">نگه دارید</string>
+    <string name="breathe_phase_exhale">بازدم کنید</string>
+    <string name="breathe_phase_hold_after_inhale">نگه دارید</string>
+    <string name="breathe_phase_hold_after_exhale">استراحت</string>
+    <string name="breathe_remaining">%1$s باقی مانده</string>
+    <string name="breathe_round">دور %1$d</string>
+    <string name="breathe_done_title">آفرین</string>
+    <string name="breathe_done_message">%1$s تمرین تنفس هدایت‌شده را کامل کردید.</string>
+    <string name="breathe_custom">الگوی دلخواه</string>
+    <string name="breathe_inhale">دم (ثانیه)</string>
+    <string name="breathe_exhale">بازدم (ثانیه)</string>
+    <string name="breathe_hold">نگه‌داشتن (ثانیه)</string>
+    <string name="breathe_hold_after_exhale">استراحت (ثانیه)</string>
+    <string name="breathe_zero_not_allowed">حداقل ۱ ثانیه</string>
+
+    <!-- ============ Sounds ============ -->
+    <string name="sounds_title">میکسر صدا</string>
+    <string name="sounds_play_all">پخش همه</string>
+    <string name="sounds_stop_all">توقف همه</string>
+    <string name="sounds_sleep_timer">تایمر خاموشی</string>
+    <string name="sounds_sleep_timer_off">خاموش</string>
+    <string name="sounds_sleep_timer_minutes">%1$d دقیقه</string>
+    <string name="sounds_sleep_timer_remaining">توقف تا %1$s</string>
+    <string name="sounds_saved_mixes">ترکیب‌های ذخیره‌شده</string>
+    <string name="sounds_save_mix">ذخیره این ترکیب</string>
+    <string name="sounds_mix_name">نام ترکیب</string>
+    <string name="sounds_mix_saved">ترکیب ذخیره شد</string>
+    <string name="sounds_mix_deleted">ترکیب حذف شد</string>
+    <string name="sounds_no_saved_mixes">هنوز ترکیبی ذخیره نکرده‌اید.</string>
+    <string name="sounds_delete_mix">حذف ترکیب</string>
+    <string name="sounds_empty">برای شروع میکس، روی یک صدا ضربه بزنید.</string>
+    <string name="sounds_layer_count">%1$d لایه از %2$d</string>
+    <string name="sounds_continue_in_background">ادامه پخش در پس‌زمینه</string>
+    <string name="sounds_continue_in_background_desc">تا زمان پخش، یک اعلان کوتاه نمایش داده می‌شود.</string>
+
+    <string name="sound_rain">باران ملایم</string>
+    <string name="sound_forest">جنگل</string>
+    <string name="sound_birds">پرندگان</string>
+    <string name="sound_sea">امواج دریا</string>
+    <string name="sound_stream">جریان آب</string>
+    <string name="sound_wind">باد</string>
+    <string name="sound_white_noise">نویز سفید</string>
+    <string name="sound_pink_noise">نویز صورتی</string>
+    <string name="sound_brown_noise">نویز قهوه‌ای</string>
+
+    <string name="sound_playback_channel">پخش صدا</string>
+    <string name="sound_playback_channel_desc">نمایش اعلان پخش هنگام پخش صداهای محیطی.</string>
+    <string name="sound_playback_notification">Calma در حال پخش صدای محیطی است</string>
+    <string name="sound_stop">توقف پخش</string>
+
+    <!-- ============ Quick calm ============ -->
+    <string name="calm_title">آرامش فوری</string>
+    <string name="calm_subtitle">انتخاب کنید که با این لحظه چه سازگارتر است.</string>
+    <string name="calm_suggested_for_you">پیشنهاد برای شما</string>
+    <string name="calm_start">شروع</string>
+    <string name="calm_next">بعدی</string>
+    <string name="calm_finish">پایان</string>
+    <string name="calm_step_of">گام %1$d از %2$d</string>
+    <string name="calm_disclaimer">Calma تمرین‌های عمومی آرام‌سازی ارائه می‌دهد و جایگزین خدمات تخصصی سلامت روان نیست.</string>
+
+    <string name="calm_breathe_title">تنفس آرام</string>
+    <string name="calm_breathe_sub">ریتم ملایم ۴ تا ۶ را دنبال کنید</string>
+    <string name="calm_senses_title">حواس پنج‌گانه</string>
+    <string name="calm_senses_sub">بررسی آرام آنچه پیرامون شماست</string>
+    <string name="calm_surroundings_title">نگاه به اطراف</string>
+    <string name="calm_surroundings_sub">سه چیز پیدا کنید، بدون نام‌بردن</string>
+    <string name="calm_mindful_title">همین‌جا باشید</string>
+    <string name="calm_mindful_sub">با ملایمت به این لحظه برگردید</string>
+    <string name="calm_release_title">رها کردن افکار</string>
+    <string name="calm_release_sub">ببینید، نام بگذارید و رها کنید</string>
+
+    <string name="calm_step_senses_1">چه چیزی می‌بینید؟</string>
+    <string name="calm_step_senses_2">چه چیزی می‌شنوید؟</string>
+    <string name="calm_step_senses_3">روی پوستتان چه حسی دارید؟</string>
+    <string name="calm_step_senses_4">چه بویی حس می‌کنید، یا بویی نیست؟</string>
+    <string name="calm_step_senses_5">چه طعمی حس می‌کنید؟</string>
+    <string name="calm_step_senses_6">یک نفس آرام بگیرید و تمام کنید.</string>
+    <string name="calm_step_surround_1">سه چیزی را که می‌بینید، بدون نام‌بردن پیدا کنید.</string>
+    <string name="calm_step_surround_2">دو چیزی را که در صورت خواست می‌توانید لمس کنید پیدا کنید.</string>
+    <string name="calm_step_surround_3">یک صدای نزدیک خودتان را پیدا کنید.</string>
+    <string name="calm_step_surround_4">توجه کنید بدن شما کجا با صندلی یا زمین تماس دارد.</string>
+    <string name="calm_step_surround_5">اندکی بیشتر همین‌جا بمانید.</string>
+    <string name="calm_step_mindful_1">توجه خود را به نفس، هرجا که حس می‌کنید، ببرید.</string>
+    <string name="calm_step_mindful_2">یک نفس کامل را از ابتدا تا انتها دنبال کنید.</string>
+    <string name="calm_step_mindful_3">اگر توجه شما پرت شد، طبیعی است. با ملایمت بازگردانید.</string>
+    <string name="calm_step_mindful_4">حس بدن در همین لحظه را ببینید، بدون تغییر دادن آن.</string>
+    <string name="calm_step_mindful_5">توجه خود را همین‌جا رها کنید. شما دقیقاً همین‌جا هستید.</string>
+    <string name="calm_step_release_1">به فکری که اکنون هست توجه کنید.</string>
+    <string name="calm_step_release_2">آرام نامش را بگذارید: فکر کردن، برنامه‌ریزی، نگرانی.</string>
+    <string name="calm_step_release_3">لازم نیست آن را حل کنید.</string>
+    <string name="calm_step_release_4">بگذارید مثل هوا طی شود.</string>
+    <string name="calm_step_release_5">به وزن بدن خود برگردید.</string>
+
+    <!-- ============ Mood / daily check-in ============ -->
+    <string name="mood_title">ثبت روزانه</string>
+    <string name="mood_new">ثبت امروز</string>
+    <string name="mood_history">تاریخچه</string>
+    <string name="mood_mood">حال</string>
+    <string name="mood_stress">استرس</string>
+    <string name="mood_energy">انرژی</string>
+    <string name="mood_concentration">تمرکز</string>
+    <string name="mood_note">یادداشت (اختیاری)</string>
+    <string name="mood_note_hint">چند کلمه، اگر مایل باشید.</string>
+    <string name="mood_save">ذخیره</string>
+    <string name="mood_update">به‌روزرسانی</string>
+    <string name="mood_delete">حذف</string>
+    <string name="mood_cancel">انصراف</string>
+    <string name="mood_saved">ثبت ذخیره شد</string>
+    <string name="mood_deleted">ثبت حذف شد</string>
+    <string name="mood_empty">هنوز ثبتی وجود ندارد. ثبت کردن چند ثانیه طول می‌کشد.</string>
+    <string name="mood_empty_hint">ثبت‌های شما فقط روی همین دستگاه می‌مانند.</string>
+    <string name="mood_delete_confirm_title">این ثبت حذف شود؟</string>
+    <string name="mood_delete_confirm_message">این رکورد و یادداشت آن برای همیشه از این دستگاه پاک می‌شود.</string>
+    <string name="mood_already_today">امروز قبلاً ثبت کرده‌اید. می‌توانید آن را به‌روزرسانی کنید.</string>
+
+    <string name="level_1">۱</string>
+    <string name="level_2">۲</string>
+    <string name="level_3">۳</string>
+    <string name="level_4">۴</string>
+    <string name="level_5">۵</string>
+    <string name="level_none">ثبت نشده</string>
+
+    <string name="mood_scale_low">کم</string>
+    <string name="mood_scale_high">زیاد</string>
+    <string name="mood_scale_very_low">خیلی کم</string>
+    <string name="mood_scale_very_high">خیلی زیاد</string>
+
+    <string name="mood_mood_1">خیلی پایین</string>
+    <string name="mood_mood_2">پایین</string>
+    <string name="mood_mood_3">معمولی</string>
+    <string name="mood_mood_4">خوب</string>
+    <string name="mood_mood_5">خیلی خوب</string>
+
+    <string name="mood_stress_1">ندارم</string>
+    <string name="mood_stress_2">خفیف</string>
+    <string name="mood_stress_3">متوسط</string>
+    <string name="mood_stress_4">زیاد</string>
+    <string name="mood_stress_5">شدید</string>
+
+    <string name="mood_energy_1">تهی</string>
+    <string name="mood_energy_2">کم</string>
+    <string name="mood_energy_3">معمولی</string>
+    <string name="mood_energy_4">خوب</string>
+    <string name="mood_energy_5">زیاد</string>
+
+    <string name="mood_focus_1">پراکنده</string>
+    <string name="mood_focus_2">ناپایدار</string>
+    <string name="mood_focus_3">معمولی</string>
+    <string name="mood_focus_4">تیز</string>
+    <string name="mood_focus_5">عمیق</string>
+
+    <!-- ============ Statistics ============ -->
+    <string name="stats_title">پیشرفت</string>
+    <string name="stats_range_week">این هفته</string>
+    <string name="stats_range_month">این ماه</string>
+    <string name="stats_total_focus">مجموع تمرکز</string>
+    <string name="stats_sessions">جلسات تکمیل‌شده</string>
+    <string name="stats_average_session">میانگین هر جلسه</string>
+    <string name="stats_calm_sessions">تمرین‌های آرامش</string>
+    <string name="stats_active_days">روزهای فعال</string>
+    <string name="stats_current_streak">روزهای متوالی</string>
+    <string name="stats_day_streak">%1$d روز پیاپی</string>
+    <string name="stats_daily_focus">تمرکز روزانه</string>
+    <string name="stats_mood_trend">روند حال</string>
+    <string name="stats_stress_trend">روند استرس</string>
+    <string name="stats_empty">هنوز چیزی ثبت نشده است.</string>
+    <string name="stats_empty_hint">یک جلسه تمرکز یا تمرین آرامش را کامل کنید تا پیشرفت شما اینجا نمایش داده شود.</string>
+    <string name="stats_no_data_range">در این بازه جلسه‌ای ثبت نشده است.</string>
+    <string name="stats_privacy_note">این اعداد فقط از داده‌های همین دستگاه محاسبه می‌شوند.</string>
+    <string name="stats_days">روز</string>
+
+    <!-- ============ Settings ============ -->
+    <string name="settings_title">تنظیمات</string>
+    <string name="settings_section_general">عمومی</string>
+    <string name="settings_section_focus">تمرکز</string>
+    <string name="settings_section_sound">صدا</string>
+    <string name="settings_section_notifications">اعلان‌ها</string>
+    <string name="settings_section_feedback">بازخورد</string>
+    <string name="settings_section_privacy">حریم خصوصی و داده</string>
+    <string name="settings_section_about">درباره برنامه</string>
+
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_system">پیروی از سیستم</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_fa">فارسی</string>
+    <string name="settings_theme">تم</string>
+    <string name="settings_theme_system">پیروی از سیستم</string>
+    <string name="settings_theme_light">روشن</string>
+    <string name="settings_theme_dark">تاریک</string>
+
+    <string name="settings_default_focus">مدت پیش‌فرض تمرکز</string>
+    <string name="settings_default_break">مدت پیش‌فرض استراحت</string>
+
+    <string name="settings_sound_enabled">صدای رابط</string>
+    <string name="settings_sound_enabled_desc">کلیک و تغییرات ملایم</string>
+    <string name="settings_haptics">لرزش</string>
+    <string name="settings_haptics_desc">لرزش ملایم در مرحله‌های تنفس</string>
+    <string name="settings_session_sound">صدای پایان جلسه</string>
+    <string name="settings_session_sound_desc">زنگ کوتاه هنگام پایان جلسه تمرکز یا تنفس</string>
+
+    <string name="settings_notifications">اعلان‌ها</string>
+    <string name="settings_notifications_desc">یادآور تمرکز و پایان جلسه</string>
+    <string name="settings_permission_needed">نیازمند مجوز</string>
+    <string name="settings_permission_blocked">در تنظیمات سیستم مسدود است</string>
+    <string name="settings_permission_grant">اجازه می‌دهم</string>
+    <string name="settings_permission_open_settings">باز کردن تنظیمات</string>
+
+    <string name="settings_clear_history">پاک کردن تاریخچه فعالیت</string>
+    <string name="settings_clear_history_desc">حذف جلسات تمرکز، آرامش و ثبت‌های روزانه</string>
+    <string name="settings_erase_all">حذف کامل داده‌های محلی</string>
+    <string name="settings_erase_all_desc">جلسات، ثبت‌ها، یادداشت‌ها، ترکیب‌ها و تنظیمات</string>
+    <string name="settings_clear_history_done">تاریخچه پاک شد</string>
+    <string name="settings_erase_all_done">همه داده‌های محلی حذف شد</string>
+    <string name="settings_confirm_clear_title">تاریخچه فعالیت پاک شود؟</string>
+    <string name="settings_confirm_clear_message">جلسات تمرکز، جلسات آرامش و ثبت‌های روزانه حذف می‌شوند. تنظیمات شما باقی می‌ماند.</string>
+    <string name="settings_confirm_erase_title">همه چیز حذف شود؟</string>
+    <string name="settings_confirm_erase_message">تمام داده‌های Calma روی این دستگاه، شامل یادداشت‌ها و تنظیمات، برای همیشه حذف می‌شود. این کار قابل بازگشت نیست.</string>
+
+    <string name="settings_version">نسخه</string>
+    <string name="settings_licenses">مجوزهای متن‌باز</string>
+    <string name="settings_permissions">مجوزهای برنامه</string>
+    <string name="settings_help">راهنمای استفاده</string>
+    <string name="settings_about">درباره Calma</string>
+    <string name="settings_privacy">سیاست حریم خصوصی</string>
+    <string name="settings_source_code">کد منبع</string>
+    <string name="settings_licenses_none">اعلان شخص ثالثی وجود ندارد.</string>
+
+    <string name="settings_about_title">Calma</string>
+    <string name="settings_about_body">Calma یک برنامه اندرویدی رایگان و متن‌باز برای تمرکز، آرام‌سازی و ذهن‌آگاهی است. کاملاً آفلاین کار می‌کند، نیازی به حساب کاربری ندارد و هیچ تبلیغ یا ابزار رهگیری ندارد.</string>
+
+    <string name="settings_help_title">راهنمای استفاده</string>
+    <string name="settings_help_focus_title">تایمر تمرکز</string>
+    <string name="settings_help_focus_body">مدت را انتخاب و شروع کنید. تایمر حتی هنگام جابه‌جایی بین برنامه‌ها یا بازسازی صفحه زمان درست را نگه می‌دارد. در پایان جلسه، در صورت فعال بودن اعلان‌ها، مطلع می‌شوید.</string>
+    <string name="settings_help_breathe_title">تنفس</string>
+    <string name="settings_help_breathe_body">یک الگوی ملایم انتخاب و دایره را دنبال کنید. هر لحظه می‌توانید تمرین را متوقف یا پایان دهید.</string>
+    <string name="settings_help_sounds_title">میکسر صدا</string>
+    <string name="settings_help_sounds_body">تا چهار صدای محیطی را لایه‌بندی کنید و شدت هر لایه را جدا تنظیم کنید. برای استفاده دوباره ترکیب را ذخیره کنید یا تایمر خاموشی بگذارید.</string>
+    <string name="settings_help_mood_title">ثبت روزانه</string>
+    <string name="settings_help_mood_body">ثبت حال، استرس، انرژی و تمرکز در چند ثانیه. رکوردها و یادداشت‌ها هرگز از دستگاه شما خارج نمی‌شوند.</string>
+    <string name="settings_help_stats_title">پیشرفت</string>
+    <string name="settings_help_stats_body">میزان تمرکز و تغییرات حالت خود را ببینید. همه مقادیر روی دستگاه و از رکوردهای خودتان محاسبه می‌شود.</string>
+
+    <!-- ============ Permissions screen ============ -->
+    <string name="permissions_title">مجوزها</string>
+    <string name="permissions_intro">Calma تا حد ممکن کم مجوز می‌خواهد. هر مجوز زیر اختیاری است و رد کردن آنها برنامه را از کار نمی‌اندازد.</string>
+    <string name="permissions_notifications_title">اعلان‌ها</string>
+    <string name="permissions_notifications_body">هنگام اجرای جلسه تمرکز اعلان تایمر را نشان می‌دهد و پایان جلسه را اطلاع می‌دهد. رد کردن آن خود تایمر را متوقف نمی‌کند.</string>
+    <string name="permissions_vibrate_title">لرزش</string>
+    <string name="permissions_vibrate_body">یک لرزش کوتاه و ملایم هنگام تغییر مرحله تنفس.</string>
+    <string name="permissions_foreground_title">صدای پس‌زمینه</string>
+    <string name="permissions_foreground_body">اجازه می‌دهد صداهای محیطی هنگام استفاده از برنامه دیگر ادامه یابند. اندروید این کار را به شکل اعلان دائمی می‌خواهد.</string>
+    <string name="permissions_wakelock_title">روشن ماندن صفحه</string>
+    <string name="permissions_wakelock_body">از خاموش شدن صفحه در طول جلسه تمرکز یا تنفسی که در برنامه شروع کرده‌اید جلوگیری می‌کند.</string>
+    <string name="permissions_none_title">هیچ مجوز دیگری</string>
+    <string name="permissions_none_body">Calma دسترسی اینترنت، دوربین، میکروفون، مخاطبین، موقعیت مکانی یا حافظه را درخواست نمی‌کند و راهی برای ارسال داده شما ندارد.</string>
+
+    <!-- ============ Time formatting ============ -->
+    <string name="time_hm">%1$dh %2$dm</string>
+    <string name="time_m">%1$d min</string>
+    <string name="time_ms">%1$d:%2$02d</string>
+    <string name="time_s">%1$d s</string>
+    <string name="time_zero">0 min</string>
+
+    <!-- ============ Generic ============ -->
+    <string name="action_ok">تأیید</string>
+    <string name="action_yes">بله</string>
+    <string name="action_no">خیر</string>
+    <string name="action_enable">فعال‌سازی</string>
+    <string name="action_disable">غیرفعال‌سازی</string>
+    <string name="action_retry">تلاش دوباره</string>
+    <string name="loading">در حال بارگذاری…</string>
+    <string name="error_generic">مشکلی پیش آمد. دوباره تلاش کنید.</string>
+
+</resources>

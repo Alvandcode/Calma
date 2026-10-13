@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">Calma</string>
+
+    <!-- ============ Navigation ============ -->
+    <string name="nav_home">Home</string>
+    <string name="nav_focus">Focus</string>
+    <string name="nav_breathe">Breathe</string>
+    <string name="nav_sounds">Sounds</string>
+    <string name="nav_stats">Progress</string>
+
+    <string name="cd_open_settings">Open settings</string>
+    <string name="cd_back">Go back</string>
+    <string name="cd_close">Close</string>
+
+    <!-- ============ Home ============ -->
+    <string name="home_greeting_morning">Good morning</string>
+    <string name="home_greeting_afternoon">Good afternoon</string>
+    <string name="home_greeting_evening">Good evening</string>
+    <string name="home_tagline">A quiet moment is already here.</string>
+    <string name="home_quick_calm">Calm now</string>
+    <string name="home_quick_calm_caption">A 2-minute guided reset</string>
+    <string name="home_daily_summary">Today so far</string>
+    <string name="home_stat_focus">Focused</string>
+    <string name="home_stat_sessions">Sessions</string>
+    <string name="home_stat_calm">Calm exercises</string>
+    <string name="home_stat_checkin">Check-ins</string>
+    <string name="home_start_focus">Start focus</string>
+    <string name="home_breathe_now">Breathe</string>
+    <string name="home_sound_mixer">Sound mixer</string>
+    <string name="home_daily_checkin">How are you today?</string>
+    <string name="home_suggestion_title">Try this</string>
+    <string name="home_no_activity_yet">No activity yet today. Begin with one minute of calm.</string>
+
+    <!-- ============ Focus ============ -->
+    <string name="focus_title">Focus timer</string>
+    <string name="focus_mode_pomodoro">Pomodoro</string>
+    <string name="focus_mode_custom">Custom</string>
+    <string name="focus_duration_label">Focus length</string>
+    <string name="focus_break_label">Break length</string>
+    <string name="focus_minutes">%1$d min</string>
+    <string name="focus_custom_minutes">Custom minutes</string>
+    <string name="focus_start">Start</string>
+    <string name="focus_pause">Pause</string>
+    <string name="focus_resume">Resume</string>
+    <string name="focus_cancel">Cancel</string>
+    <string name="focus_finish">Finish</string>
+    <string name="focus_break_time">Break</string>
+    <string name="focus_phase_focus">Focus</string>
+    <string name="focus_phase_break">Break</string>
+    <string name="focus_phase_break_over">Break is over</string>
+    <string name="focus_completed_title">Session complete</string>
+    <string name="focus_completed_message">You focused for %1$s. Take a short break.</string>
+    <string name="focus_canceled">Session discarded</string>
+    <string name="focus_elapsed">Focused %1$s</string>
+    <string name="focus_break_remaining">Break ends in %1$s</string>
+    <string name="focus_presets">Presets</string>
+    <string name="focus_running">In progress</string>
+    <string name="focus_notification_channel">Focus sessions</string>
+    <string name="focus_notification_channel_desc">Shows the remaining time while a focus session runs.</string>
+    <string name="focus_notification_title">Focus session</string>
+    <string name="focus_notification_text">%1$s remaining</string>
+    <string name="focus_notification_done">Session finished</string>
+    <string name="focus_notification_done_text">You completed %1$s of focus.</string>
+
+    <!-- ============ Breathing ============ -->
+    <string name="breathe_title">Breathing exercise</string>
+    <string name="breathe_pattern">Pattern</string>
+    <string name="breathe_duration">Duration</string>
+    <string name="breathe_start">Start</string>
+    <string name="breathe_pause">Pause</string>
+    <string name="breathe_resume">Resume</string>
+    <string name="breathe_stop">End</string>
+    <string name="breathe_phase_inhale">Breathe in</string>
+    <string name="breathe_phase_hold">Hold</string>
+    <string name="breathe_phase_exhale">Breathe out</string>
+    <string name="breathe_phase_hold_after_inhale">Hold</string>
+    <string name="breathe_phase_hold_after_exhale">Rest</string>
+    <string name="breathe_remaining">%1$s left</string>
+    <string name="breathe_round">Round %1$d</string>
+    <string name="breathe_done_title">Well done</string>
+    <string name="breathe_done_message">You completed %1$s of guided breathing.</string>
+    <string name="breathe_custom">Custom pattern</string>
+    <string name="breathe_inhale">Inhale (s)</string>
+    <string name="breathe_exhale">Exhale (s)</string>
+    <string name="breathe_hold">Hold (s)</string>
+    <string name="breathe_hold_after_exhale">Rest (s)</string>
+    <string name="breathe_zero_not_allowed">Use at least 1 second</string>
+
+    <!-- ============ Sounds ============ -->
+    <string name="sounds_title">Sound mixer</string>
+    <string name="sounds_play_all">Play all</string>
+    <string name="sounds_stop_all">Stop all</string>
+    <string name="sounds_sleep_timer">Sleep timer</string>
+    <string name="sounds_sleep_timer_off">Off</string>
+    <string name="sounds_sleep_timer_minutes">%1$d min</string>
+    <string name="sounds_sleep_timer_remaining">Stopping in %1$s</string>
+    <string name="sounds_saved_mixes">Saved mixes</string>
+    <string name="sounds_save_mix">Save this mix</string>
+    <string name="sounds_mix_name">Mix name</string>
+    <string name="sounds_mix_saved">Mix saved</string>
+    <string name="sounds_mix_deleted">Mix deleted</string>
+    <string name="sounds_no_saved_mixes">You have no saved mixes yet.</string>
+    <string name="sounds_delete_mix">Delete mix</string>
+    <string name="sounds_empty">Tap a sound to start mixing.</string>
+    <string name="sounds_layer_count">%1$d of %2$d layers</string>
+    <string name="sounds_continue_in_background">Keep playing in the background</string>
+    <string name="sounds_continue_in_background_desc">Calma keeps a short foreground notification while audio plays.</string>
+
+    <string name="sound_rain">Gentle rain</string>
+    <string name="sound_forest">Forest</string>
+    <string name="sound_birds">Birds</string>
+    <string name="sound_sea">Sea waves</string>
+    <string name="sound_stream">Stream</string>
+    <string name="sound_wind">Wind</string>
+    <string name="sound_white_noise">White noise</string>
+    <string name="sound_pink_noise">Pink noise</string>
+    <string name="sound_brown_noise">Brown noise</string>
+
+    <string name="sound_playback_channel">Ambient audio</string>
+    <string name="sound_playback_channel_desc">Shows the playback notification while ambient audio plays.</string>
+    <string name="sound_playback_notification">Calma is playing ambient audio</string>
+    <string name="sound_stop">Stop audio</string>
+
+    <!-- ============ Quick calm ============ -->
+    <string name="calm_title">Calm now</string>
+    <string name="calm_subtitle">Choose what fits this moment.</string>
+    <string name="calm_suggested_for_you">Suggested for you</string>
+    <string name="calm_start">Begin</string>
+    <string name="calm_next">Next</string>
+    <string name="calm_finish">Finish</string>
+    <string name="calm_step_of">Step %1$d of %2$d</string>
+    <string name="calm_disclaimer">Calma offers general relaxation exercises. It is not a substitute for professional mental-health care.</string>
+
+    <string name="calm_breathe_title">Slow breathing</string>
+    <string name="calm_breathe_sub">Follow a gentle 4–6 rhythm</string>
+    <string name="calm_senses_title">Notice your five senses</string>
+    <string name="calm_senses_sub">A slow scan of what is around you</string>
+    <string name="calm_surroundings_title">Look around</string>
+    <string name="calm_surroundings_sub">Find three things without naming them</string>
+    <string name="calm_mindful_title">Be here now</string>
+    <string name="calm_mindful_sub">Return gently to this moment</string>
+    <string name="calm_release_title">Let thoughts pass</string>
+    <string name="calm_release_sub">Notice, name, and let go</string>
+
+    <string name="calm_step_senses_1">What do you see?</string>
+    <string name="calm_step_senses_2">What do you hear?</string>
+    <string name="calm_step_senses_3">What can you feel on your skin?</string>
+    <string name="calm_step_senses_4">What can you smell, or is there no scent?</string>
+    <string name="calm_step_senses_5">What can you taste?</string>
+    <string name="calm_step_senses_6">Take one easy breath and finish.</string>
+    <string name="calm_step_surround_1">Find three things you can see, without naming them.</string>
+    <string name="calm_step_surround_2">Find two things you could touch if you wanted to.</string>
+    <string name="calm_step_surround_3">Find one sound that is close to you.</string>
+    <string name="calm_step_surround_4">Notice where your body meets the chair or the floor.</string>
+    <string name="calm_step_surround_5">Rest here for a moment longer.</string>
+    <string name="calm_step_mindful_1">Bring your attention to the breath, wherever you feel it.</string>
+    <string name="calm_step_mindful_2">Follow one full breath from start to end.</string>
+    <string name="calm_step_mindful_3">If your attention wanders, that is normal. Bring it back gently.</string>
+    <string name="calm_step_mindful_4">Notice the feeling in your body right now, without changing it.</string>
+    <string name="calm_step_mindful_5">Rest your attention here. You are exactly where you are.</string>
+    <string name="calm_step_release_1">Notice a thought that is here.</string>
+    <string name="calm_step_release_2">Name it quietly: thinking, planning, worrying.</string>
+    <string name="calm_step_release_3">You do not have to solve it.</string>
+    <string name="calm_step_release_4">Let it move on like weather.</string>
+    <string name="calm_step_release_5">Come back to the weight of your body.</string>
+
+    <!-- ============ Mood / daily check-in ============ -->
+    <string name="mood_title">Daily check-in</string>
+    <string name="mood_new">Today\'s check-in</string>
+    <string name="mood_history">History</string>
+    <string name="mood_mood">Mood</string>
+    <string name="mood_stress">Stress</string>
+    <string name="mood_energy">Energy</string>
+    <string name="mood_concentration">Concentration</string>
+    <string name="mood_note">Note (optional)</string>
+    <string name="mood_note_hint">A few words, if you want.</string>
+    <string name="mood_save">Save</string>
+    <string name="mood_update">Update</string>
+    <string name="mood_delete">Delete</string>
+    <string name="mood_cancel">Cancel</string>
+    <string name="mood_saved">Check-in saved</string>
+    <string name="mood_deleted">Check-in deleted</string>
+    <string name="mood_empty">No check-ins yet. Recording one takes a few seconds.</string>
+    <string name="mood_empty_hint">Your entries stay on this device only.</string>
+    <string name="mood_delete_confirm_title">Delete this check-in?</string>
+    <string name="mood_delete_confirm_message">This entry and its note will be removed from this device permanently.</string>
+    <string name="mood_already_today">You already checked in today. You can update it below.</string>
+
+    <string name="level_1">1</string>
+    <string name="level_2">2</string>
+    <string name="level_3">3</string>
+    <string name="level_4">4</string>
+    <string name="level_5">5</string>
+    <string name="level_none">Not recorded</string>
+
+    <string name="mood_scale_low">Low</string>
+    <string name="mood_scale_high">High</string>
+    <string name="mood_scale_very_low">Very low</string>
+    <string name="mood_scale_very_high">Very high</string>
+
+    <string name="mood_mood_1">Very low</string>
+    <string name="mood_mood_2">Low</string>
+    <string name="mood_mood_3">Okay</string>
+    <string name="mood_mood_4">Good</string>
+    <string name="mood_mood_5">Very good</string>
+
+    <string name="mood_stress_1">None</string>
+    <string name="mood_stress_2">Mild</string>
+    <string name="mood_stress_3">Moderate</string>
+    <string name="mood_stress_4">High</string>
+    <string name="mood_stress_5">Severe</string>
+
+    <string name="mood_energy_1">Drained</string>
+    <string name="mood_energy_2">Low</string>
+    <string name="mood_energy_3">Steady</string>
+    <string name="mood_energy_4">Good</string>
+    <string name="mood_energy_5">Full</string>
+
+    <string name="mood_focus_1">Scattered</string>
+    <string name="mood_focus_2">Drifting</string>
+    <string name="mood_focus_3">Okay</string>
+    <string name="mood_focus_4">Sharp</string>
+    <string name="mood_focus_5">Deep</string>
+
+    <!-- ============ Statistics ============ -->
+    <string name="stats_title">Progress</string>
+    <string name="stats_range_week">This week</string>
+    <string name="stats_range_month">This month</string>
+    <string name="stats_total_focus">Total focus</string>
+    <string name="stats_sessions">Completed sessions</string>
+    <string name="stats_average_session">Average session</string>
+    <string name="stats_calm_sessions">Calm exercises</string>
+    <string name="stats_active_days">Active days</string>
+    <string name="stats_current_streak">Current streak</string>
+    <string name="stats_day_streak">%1$d day streak</string>
+    <string name="stats_daily_focus">Daily focus</string>
+    <string name="stats_mood_trend">Mood trend</string>
+    <string name="stats_stress_trend">Stress trend</string>
+    <string name="stats_empty">Nothing recorded yet.</string>
+    <string name="stats_empty_hint">Finish a focus session or a breathing exercise and your progress will appear here.</string>
+    <string name="stats_no_data_range">No sessions in this period.</string>
+    <string name="stats_privacy_note">These numbers come from data stored on this device only.</string>
+    <string name="stats_days">Days</string>
+
+    <!-- ============ Settings ============ -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_focus">Focus</string>
+    <string name="settings_section_sound">Sound</string>
+    <string name="settings_section_notifications">Notifications</string>
+    <string name="settings_section_feedback">Feedback</string>
+    <string name="settings_section_privacy">Privacy and data</string>
+    <string name="settings_section_about">About</string>
+
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">Follow system</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_fa">فارسی</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">Follow system</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+
+    <string name="settings_default_focus">Default focus length</string>
+    <string name="settings_default_break">Default break length</string>
+
+    <string name="settings_sound_enabled">Interface sounds</string>
+    <string name="settings_sound_enabled_desc">Soft clicks and transitions</string>
+    <string name="settings_haptics">Haptics</string>
+    <string name="settings_haptics_desc">Gentle vibration on breathing phases</string>
+    <string name="settings_session_sound">Session sound</string>
+    <string name="settings_session_sound_desc">Chime when a focus or breathing session ends</string>
+
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_desc">Focus reminders and session completion</string>
+    <string name="settings_permission_needed">Permission required</string>
+    <string name="settings_permission_blocked">Blocked in system settings</string>
+    <string name="settings_permission_grant">Allow</string>
+    <string name="settings_permission_open_settings">Open settings</string>
+
+    <string name="settings_clear_history">Clear activity history</string>
+    <string name="settings_clear_history_desc">Removes focus sessions, calm sessions and check-ins</string>
+    <string name="settings_erase_all">Erase all local data</string>
+    <string name="settings_erase_all_desc">Sessions, check-ins, notes, mixes and settings</string>
+    <string name="settings_clear_history_done">History cleared</string>
+    <string name="settings_erase_all_done">All local data erased</string>
+    <string name="settings_confirm_clear_title">Clear activity history?</string>
+    <string name="settings_confirm_clear_message">Focus sessions, calm sessions and daily check-ins will be deleted. Your settings are kept.</string>
+    <string name="settings_confirm_erase_title">Erase everything?</string>
+    <string name="settings_confirm_erase_message">This permanently deletes all Calma data on this device, including your notes and settings. This cannot be undone.</string>
+
+    <string name="settings_version">Version</string>
+    <string name="settings_licenses">Open-source licences</string>
+    <string name="settings_permissions">Permissions</string>
+    <string name="settings_help">User guide</string>
+    <string name="settings_about">About Calma</string>
+    <string name="settings_privacy">Privacy policy</string>
+    <string name="settings_source_code">Source code</string>
+    <string name="settings_licenses_none">No third-party notices apply.</string>
+
+    <string name="settings_about_title">Calma</string>
+    <string name="settings_about_body">Calma is a free and open-source Android app for focus, relaxation and mindfulness. It works fully offline, asks for no account, and contains no ads or trackers.</string>
+
+    <string name="settings_help_title">User guide</string>
+    <string name="settings_help_focus_title">Focus timer</string>
+    <string name="settings_help_focus_body">Pick a length and start. The timer keeps correct time even if you switch apps or the screen rebuilds. When a session ends you are notified if notifications are enabled.</string>
+    <string name="settings_help_breathe_title">Breathing</string>
+    <string name="settings_help_breathe_body">Choose a gentle pattern and follow the circle. You can pause or end the exercise at any moment.</string>
+    <string name="settings_help_sounds_title">Sound mixer</string>
+    <string name="settings_help_sounds_body">Layer up to four ambient sounds and set each volume separately. Save a mix to reuse it later, or set a sleep timer.</string>
+    <string name="settings_help_mood_title">Daily check-in</string>
+    <string name="settings_help_mood_body">Record mood, stress, energy and concentration in a few seconds. Entries and notes never leave your device.</string>
+    <string name="settings_help_stats_title">Progress</string>
+    <string name="settings_help_stats_body">See how much time you focused and how your mood changed. All values are calculated on-device from your own records.</string>
+
+    <!-- ============ Permissions screen ============ -->
+    <string name="permissions_title">Permissions</string>
+    <string name="permissions_intro">Calma asks for as little as possible. Every permission below is optional and can be denied without breaking the app.</string>
+    <string name="permissions_notifications_title">Notifications</string>
+    <string name="permissions_notifications_body">Shows a timer notification while a focus session runs, and tells you when a session ends. Denying this does not stop the timer itself.</string>
+    <string name="permissions_vibrate_title">Vibration</string>
+    <string name="permissions_vibrate_body">A short, soft vibration marks each breathing phase change.</string>
+    <string name="permissions_foreground_title">Background audio</string>
+    <string name="permissions_foreground_body">Allows ambient sounds to keep playing while you use another app. Android requires this to be shown as an ongoing notification.</string>
+    <string name="permissions_wakelock_title">Keep screen awake</string>
+    <string name="permissions_wakelock_body">Prevents the screen from turning off during a focus or breathing session that you started in the app.</string>
+    <string name="permissions_none_title">No other permissions</string>
+    <string name="permissions_none_body">Calma does not request internet access, camera, microphone, contacts, location or storage. It has no way to upload your data.</string>
+
+    <!-- ============ Time formatting ============ -->
+    <string name="time_hm">%1$dh %2$dm</string>
+    <string name="time_m">%1$d min</string>
+    <string name="time_ms">%1$d:%2$02d</string>
+    <string name="time_s">%1$d s</string>
+    <string name="time_zero">0 min</string>
+
+    <!-- ============ Generic ============ -->
+    <string name="action_ok">OK</string>
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
+    <string name="action_enable">Enable</string>
+    <string name="action_disable">Disable</string>
+    <string name="action_retry">Retry</string>
+    <string name="loading">Loading…</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+
+</resources>
