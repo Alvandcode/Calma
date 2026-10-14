@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
         get() = (application as CalmaApplication).container
 
     override fun attachBaseContext(newBase: Context) {
-        val tag = LocaleController.pendingTag
+        val tag = LocaleController.getCurrentTag(newBase)
         super.attachBaseContext(LocaleController.wrapContext(newBase, tag))
     }
 

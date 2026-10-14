@@ -67,9 +67,21 @@ class CalmaApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        LocaleController.pendingTag = LocaleController.loadPersistedTag(this)
-        container = AppContainer(this)
+        LocaleController.rememberTag(this, LocaleController.loadPersistedTag(this))
+        container = runCatching { AppContainer(this) }
+            .onFailure { e ->
+                android.util.Log.e("CalmaApplication", "Failed to initialize AppContainer, wiping data", e)
+                // Wipe corrupted data and retry once
+                wipeCorruptedData()
+                AppContainer(this)
+            }.getOrThrow()
         NotificationChannels.createAll(this)
+    }
+
+    private fun wipeCorruptedData() {
+        runCatching { deleteDatabase(CalmaDatabase.NAME) }
+        runCatching { getSharedPreferences("calma_settings", MODE_PRIVATE).edit().clear().apply() }
+        runCatching { getSharedPreferences("calma_locale_bootstrap", MODE_PRIVATE).edit().clear().apply() }
     }
 }
 

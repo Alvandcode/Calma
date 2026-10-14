@@ -5,8 +5,11 @@
 -keepattributes SourceFile,LineNumberTable
 -renamesourcefileattribute SourceFile
 
-# Room generated implementations
--keep class * extends androidx.room.RoomDatabase { <init>(); }
+# Room - keep entities, DAOs, and generated implementations
+-keep class app.calma.data.local.entity.** { *; }
+-keep class app.calma.data.local.dao.** { *; }
+-keep class * extends androidx.room.RoomDatabase { *; }
+-keepclassmembers class * extends androidx.room.RoomDatabase { *; }
 -dontwarn androidx.room.paging.**
 
 # Kotlin metadata used by reflection-free coroutines/debugging

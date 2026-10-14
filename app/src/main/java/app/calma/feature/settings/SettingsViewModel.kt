@@ -63,6 +63,7 @@ class SettingsViewModel(
         viewModelScope.launch {
             val language = container.settingsStore.settings.first().language
             LocaleController.apply(appContext, language.languageTag)
+            LocaleController.rememberTag(appContext, language.languageTag)
         }
     }
 

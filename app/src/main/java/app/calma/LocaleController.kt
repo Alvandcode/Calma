@@ -26,16 +26,19 @@ object LocaleController {
     private const val BOOT_PREFS = "calma_locale_bootstrap"
     private const val KEY_TAG = "language_tag"
 
-    /** Last language tag written by Settings, or null when following the system. */
-    @Volatile
-    var pendingTag: String? = null
-
     val usesPlatformLocaleManager: Boolean
         get() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
 
+    /** Reads the mirrored tag; called once from [CalmaApplication.onCreate]. */
+    fun loadPersistedTag(context: Context): String? = runCatching {
+        context.applicationContext
+            .getSharedPreferences(BOOT_PREFS, Context.MODE_PRIVATE)
+            .getString(KEY_TAG, null)
+            ?.takeIf { it.isNotBlank() }
+    }.getOrNull()
+
     /** Mirrors [tag] so the next cold start can apply it synchronously. */
     fun rememberTag(context: Context, tag: String?) {
-        pendingTag = tag
         runCatching {
             context.applicationContext
                 .getSharedPreferences(BOOT_PREFS, Context.MODE_PRIVATE)
@@ -45,13 +48,12 @@ object LocaleController {
         }
     }
 
-    /** Reads the mirrored tag; called once from [CalmaApplication.onCreate]. */
-    fun loadPersistedTag(context: Context): String? = runCatching {
-        context.applicationContext
+    /** Current effective language tag (reads from DataStore via SettingsStore). */
+    fun getCurrentTag(context: Context): String? {
+        val prefs = context.applicationContext
             .getSharedPreferences(BOOT_PREFS, Context.MODE_PRIVATE)
-            .getString(KEY_TAG, null)
-            ?.takeIf { it.isNotBlank() }
-    }.getOrNull()
+        return prefs.getString(KEY_TAG, null)?.takeIf { it.isNotBlank() }
+    }
 
     fun apply(context: Context, tag: String?) {
         if (!usesPlatformLocaleManager) return

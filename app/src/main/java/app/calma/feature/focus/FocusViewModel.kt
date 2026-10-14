@@ -78,7 +78,13 @@ class FocusViewModel(
                 }
             }
         }
-        viewModelScope.launch { restoreIfNeeded() }
+        viewModelScope.launch {
+            runCatching { restoreIfNeeded() }
+                .onFailure { e ->
+                    android.util.Log.e("FocusViewModel", "Failed to restore session", e)
+                    resetToIdle()
+                }
+        }
     }
 
     // ---- UI inputs ---------------------------------------------------------------------

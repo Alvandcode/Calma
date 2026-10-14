@@ -239,18 +239,7 @@ class SoundMixerEngine(
         }
     }
 
-    private fun startPlayers(wanted: Set<AmbientSound>) {
-        registerNoisyReceiver()
-        players.keys.filterNot { it in wanted }.forEach { players.remove(it)?.release() }
-        wanted.forEach { sound ->
-            val player = players.getOrPut(sound) { createPlayer(sound) }
-            val layer = _state.value.layers.first { it.sound == sound }
-            player.volume = layer.volume.coerceIn(0f, 1f) * _state.value.masterVolume
-            player.playWhenReady = true
-        }
-    }
-
-    private fun createPlayer(sound: AmbientSound): ExoPlayer =
+    private fun createPlayer(sound: AmbientSound): ExoPlayer? = runCatching {
         ExoPlayer.Builder(context).build().apply {
             setAudioAttributes(
                 Media3AudioAttributes.Builder()
@@ -270,6 +259,23 @@ class SoundMixerEngine(
             })
             prepare()
         }
+    }.getOrNull()
+
+    private fun startPlayers(wanted: Set<AmbientSound>) {
+        registerNoisyReceiver()
+        players.keys.filterNot { it in wanted }.forEach { players.remove(it)?.release() }
+        wanted.forEach { sound ->
+            val player = players.getOrPut(sound) { createPlayer(sound) }
+            if (player == null) {
+                Log.e(TAG, "Failed to create player for ${sound.id}, skipping")
+                _state.update { it.withToggled(sound.id, false) }
+                return@forEach
+            }
+            val layer = _state.value.layers.first { it.sound == sound }
+            player.volume = layer.volume.coerceIn(0f, 1f) * _state.value.masterVolume
+            player.playWhenReady = true
+        }
+    }
 
     private fun resUri(sound: AmbientSound): Uri {
         // context.packageName resolves to the real id, including the `.debug` suffix.

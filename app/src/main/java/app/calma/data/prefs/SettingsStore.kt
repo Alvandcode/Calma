@@ -12,6 +12,7 @@ import app.calma.core.common.AppLanguage
 import app.calma.core.common.FocusMode
 import app.calma.core.common.ThemeMode
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "calma_settings")
@@ -48,25 +49,30 @@ data class CalmaSettings(
 
 class SettingsStore(private val context: Context) {
 
-    val settings: Flow<CalmaSettings> = context.dataStore.data.map { prefs ->
-        CalmaSettings(
-            language = AppLanguage.fromTag(prefs[Keys.LANGUAGE]),
-            themeMode = ThemeMode.fromName(prefs[Keys.THEME]),
-            defaultFocusMinutes = (prefs[Keys.FOCUS_MINUTES] ?: 25).coerceIn(1, 180),
-            defaultBreakMinutes = (prefs[Keys.BREAK_MINUTES] ?: 5).coerceIn(0, 60),
-            focusMode = FocusMode.fromName(prefs[Keys.FOCUS_MODE]),
-            interfaceSoundsEnabled = prefs[Keys.UI_SOUNDS] ?: false,
-            hapticsEnabled = prefs[Keys.HAPTICS] ?: true,
-            sessionChimeEnabled = prefs[Keys.SESSION_CHIME] ?: true,
-            notificationsEnabled = prefs[Keys.NOTIFICATIONS] ?: true,
-            soundBackgroundPlaybackEnabled = prefs[Keys.BACKGROUND_PLAYBACK] ?: true,
-            lastBreathingPatternId = prefs[Keys.BREATHING_PATTERN] ?: "calm_4_6",
-            lastBreathingDurationSeconds = (prefs[Keys.BREATHING_DURATION] ?: 180)
-                .coerceIn(30, 1800),
-            lastMixVolumes = prefs[Keys.MIX_VOLUMES] ?: "",
-            lastCalmExerciseId = prefs[Keys.LAST_CALM_EXERCISE] ?: "",
-        )
-    }
+    val settings: Flow<CalmaSettings> = context.dataStore.data
+        .catch { e ->
+            android.util.Log.e("SettingsStore", "DataStore read error, rethrowing", e)
+            throw e
+        }
+        .map { prefs ->
+            CalmaSettings(
+                language = AppLanguage.fromTag(prefs[Keys.LANGUAGE]),
+                themeMode = ThemeMode.fromName(prefs[Keys.THEME]),
+                defaultFocusMinutes = (prefs[Keys.FOCUS_MINUTES] ?: 25).coerceIn(1, 180),
+                defaultBreakMinutes = (prefs[Keys.BREAK_MINUTES] ?: 5).coerceIn(0, 60),
+                focusMode = FocusMode.fromName(prefs[Keys.FOCUS_MODE]),
+                interfaceSoundsEnabled = prefs[Keys.UI_SOUNDS] ?: false,
+                hapticsEnabled = prefs[Keys.HAPTICS] ?: true,
+                sessionChimeEnabled = prefs[Keys.SESSION_CHIME] ?: true,
+                notificationsEnabled = prefs[Keys.NOTIFICATIONS] ?: true,
+                soundBackgroundPlaybackEnabled = prefs[Keys.BACKGROUND_PLAYBACK] ?: true,
+                lastBreathingPatternId = prefs[Keys.BREATHING_PATTERN] ?: "calm_4_6",
+                lastBreathingDurationSeconds = (prefs[Keys.BREATHING_DURATION] ?: 180)
+                    .coerceIn(30, 1800),
+                lastMixVolumes = prefs[Keys.MIX_VOLUMES] ?: "",
+                lastCalmExerciseId = prefs[Keys.LAST_CALM_EXERCISE] ?: "",
+            )
+        }
 
     suspend fun setLanguage(language: AppLanguage) {
         context.dataStore.edit { it[Keys.LANGUAGE] = language.languageTag.orEmpty() }

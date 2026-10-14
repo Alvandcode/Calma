@@ -125,16 +125,18 @@ class FocusRepository(private val dao: FocusDao) {
         lastTickEpochMillis = nowWallClockMillis,
     )
 
-    private fun ActiveSessionEntity.toSnapshot() = FocusTimerSnapshot(
-        runState = FocusRunState.fromName(runState),
-        phase = FocusPhase.fromName(phase),
-        focusMillis = focusMillis,
-        breakMillis = breakMillis,
-        focusedAccumulatedMillis = focusedAccumulatedMillis,
-        segmentElapsedMillis = 0L,
-        segmentStartedElapsedMillis = runStartedElapsedMillis,
-        startedAtEpochMillis = startedAtEpochMillis,
-        anchorWallClockMillis = anchorWallClockMillis,
-        anchorElapsedMillis = anchorElapsedMillis,
-    )
+    private fun ActiveSessionEntity.toSnapshot(): FocusTimerSnapshot? = runCatching {
+        FocusTimerSnapshot(
+            runState = FocusRunState.fromName(runState),
+            phase = FocusPhase.fromName(phase),
+            focusMillis = focusMillis,
+            breakMillis = breakMillis,
+            focusedAccumulatedMillis = focusedAccumulatedMillis,
+            segmentElapsedMillis = 0L,
+            segmentStartedElapsedMillis = runStartedElapsedMillis,
+            startedAtEpochMillis = startedAtEpochMillis,
+            anchorWallClockMillis = anchorWallClockMillis,
+            anchorElapsedMillis = anchorElapsedMillis,
+        )
+    }.getOrNull()
 }
