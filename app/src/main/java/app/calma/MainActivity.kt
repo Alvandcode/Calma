@@ -24,10 +24,12 @@ import kotlinx.coroutines.launch
  */
 class MainActivity : ComponentActivity() {
 
-    private val settingsViewModel: SettingsViewModel by viewModels()
-
     private val container: AppContainer
         get() = (application as CalmaApplication).container
+
+    private val settingsViewModel: SettingsViewModel by viewModels {
+        SettingsViewModel.factory(container, applicationContext)
+    }
 
     override fun attachBaseContext(newBase: Context) {
         val tag = LocaleController.getCurrentTag(newBase)
