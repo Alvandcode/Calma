@@ -1,6 +1,9 @@
 package app.calma.feature.home
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -15,7 +18,8 @@ import androidx.compose.material.icons.outlined.BarChart
 import androidx.compose.material.icons.outlined.EditNote
 import androidx.compose.material.icons.outlined.SelfImprovement
 import androidx.compose.material.icons.outlined.Timer
-import androidx.compose.material.icons.outlined.Waves
+import androidx.compose.material3.AssistChip
+import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -26,6 +30,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -35,7 +41,6 @@ import app.calma.R
 import app.calma.core.common.Format
 import app.calma.core.di.appContainer
 import app.calma.core.ui.component.CalmaCard
-import app.calma.core.ui.component.CalmaCard
 import app.calma.core.ui.component.SectionHeader
 import app.calma.core.ui.component.StatTile
 import app.calma.core.ui.theme.CalmaSpacing
@@ -44,8 +49,8 @@ import java.util.Calendar
 /**
  * Home.
  *
- * Deliberately short: one prominent action ("Calm now"), a compact summary of today and a
- * handful of direct entry points. Nothing that needs a network, an account or an ad.
+ * Warm ember hero ("Recommended" card), quick-entry chips and a compact summary of
+ * today. Nothing that needs a network, an account or an ad.
  */
 @Composable
 fun HomeScreen(
@@ -79,18 +84,17 @@ fun HomeScreen(
     ) {
         Greeting()
 
-        QuickCalmCard(onClick = onOpenCalm)
+        HeroCard(onClick = onOpenCalm)
+
+        EntryChips(
+            onOpenFocus = onOpenFocus,
+            onOpenBreathe = onOpenBreathe,
+            onOpenSounds = onOpenSounds,
+        )
 
         TodaySection(
             state = state,
             onOpenMood = onOpenMood,
-        )
-
-        SectionHeader(title = stringResource(R.string.home_tagline))
-        ShortcutGrid(
-            onOpenFocus = onOpenFocus,
-            onOpenBreathe = onOpenBreathe,
-            onOpenSounds = onOpenSounds,
         )
     }
 }
@@ -104,30 +108,51 @@ private fun Greeting() {
     }
     Text(
         text = stringResource(greeting),
-        style = MaterialTheme.typography.headlineMedium,
+        style = MaterialTheme.typography.headlineLarge,
         color = MaterialTheme.colorScheme.onBackground,
     )
 }
 
 @Composable
-private fun QuickCalmCard(onClick: () -> Unit) {
-    Surface(
-        modifier = Modifier.fillMaxWidth(),
-        shape = MaterialTheme.shapes.extraLarge,
-        color = MaterialTheme.colorScheme.primaryContainer,
-        contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+private fun HeroCard(onClick: () -> Unit) {
+    val gradient = Brush.verticalGradient(
+        colors = listOf(
+            MaterialTheme.colorScheme.primaryContainer,
+            MaterialTheme.colorScheme.tertiaryContainer,
+        ),
+    )
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(MaterialTheme.shapes.extraLarge)
+            .background(gradient)
+            .clickable(onClick = onClick)
+            .padding(CalmaSpacing.xl),
     ) {
-        Column(
-            modifier = Modifier.padding(CalmaSpacing.xl),
-            verticalArrangement = Arrangement.spacedBy(CalmaSpacing.sm),
-        ) {
+        Column(verticalArrangement = Arrangement.spacedBy(CalmaSpacing.sm)) {
+            Surface(
+                shape = MaterialTheme.shapes.small,
+                color = MaterialTheme.colorScheme.primary,
+                contentColor = MaterialTheme.colorScheme.onPrimary,
+            ) {
+                Text(
+                    text = stringResource(R.string.home_recommended),
+                    style = MaterialTheme.typography.labelMedium,
+                    modifier = Modifier.padding(
+                        horizontal = CalmaSpacing.md,
+                        vertical = CalmaSpacing.xs,
+                    ),
+                )
+            }
             Text(
                 text = stringResource(R.string.home_quick_calm),
-                style = MaterialTheme.typography.headlineSmall,
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
             )
             Text(
                 text = stringResource(R.string.home_quick_calm_caption),
                 style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
             )
             Button(
                 onClick = onClick,
@@ -148,6 +173,37 @@ private fun QuickCalmCard(onClick: () -> Unit) {
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun EntryChips(
+    onOpenFocus: () -> Unit,
+    onOpenBreathe: () -> Unit,
+    onOpenSounds: () -> Unit,
+) {
+    Row(horizontalArrangement = Arrangement.spacedBy(CalmaSpacing.sm)) {
+        AssistChip(
+            onClick = onOpenFocus,
+            label = { Text(stringResource(R.string.home_start_focus)) },
+            leadingIcon = {
+                Icon(Icons.Outlined.Timer, contentDescription = null)
+            },
+            colors = AssistChipDefaults.assistChipColors(),
+        )
+        AssistChip(
+            onClick = onOpenBreathe,
+            label = { Text(stringResource(R.string.home_breathe_now)) },
+            leadingIcon = {
+                Icon(Icons.Outlined.SelfImprovement, contentDescription = null)
+            },
+            colors = AssistChipDefaults.assistChipColors(),
+        )
+        AssistChip(
+            onClick = onOpenSounds,
+            label = { Text(stringResource(R.string.home_sound_mixer)) },
+            colors = AssistChipDefaults.assistChipColors(),
+        )
     }
 }
 
@@ -199,35 +255,6 @@ private fun TodaySection(
                 text = stringResource(R.string.home_no_activity_yet),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-    }
-}
-
-@Composable
-private fun ShortcutGrid(
-    onOpenFocus: () -> Unit,
-    onOpenBreathe: () -> Unit,
-    onOpenSounds: () -> Unit,
-) {
-    Column(verticalArrangement = Arrangement.spacedBy(CalmaSpacing.sm)) {
-        CalmaCard(
-            title = stringResource(R.string.home_start_focus),
-            icon = Icons.Outlined.Timer,
-            onClick = onOpenFocus,
-        )
-        Row(horizontalArrangement = Arrangement.spacedBy(CalmaSpacing.sm)) {
-            CalmaCard(
-                title = stringResource(R.string.home_breathe_now),
-                icon = Icons.Outlined.SelfImprovement,
-                onClick = onOpenBreathe,
-                modifier = Modifier.weight(1f),
-            )
-            CalmaCard(
-                title = stringResource(R.string.home_sound_mixer),
-                icon = Icons.Outlined.Waves,
-                onClick = onOpenSounds,
-                modifier = Modifier.weight(1f),
             )
         }
     }

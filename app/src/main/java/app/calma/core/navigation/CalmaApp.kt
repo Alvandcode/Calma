@@ -3,27 +3,34 @@ package app.calma.core.navigation
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -72,7 +79,7 @@ fun CalmaApp() {
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             AnimatedVisibility(
-                visible = isTopLevel,
+                visible = isTopLevel && currentRoute != TopLevelDestination.HOME.route,
                 enter = slideInVertically { -it },
                 exit = slideOutVertically { -it },
             ) {
@@ -103,29 +110,78 @@ fun CalmaApp() {
         },
         bottomBar = {
             AnimatedVisibility(visible = isTopLevel) {
-                NavigationBar {
-                    TopLevelDestination.entries.forEach { destination ->
-                        val selected = backStackEntry?.destination?.hierarchy
-                            ?.any { it.route == destination.route } == true
-                        NavigationBarItem(
-                            selected = selected,
-                            onClick = {
-                                navController.navigate(destination.route) {
-                                    popUpTo(navController.graph.findStartDestination().id) {
-                                        saveState = true
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
+                            horizontal = CalmaSpacing.lg,
+                            vertical = CalmaSpacing.md,
+                        ),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Surface(
+                        shape = RoundedCornerShape(28.dp),
+                        color = MaterialTheme.colorScheme.surfaceContainerHigh,
+                        tonalElevation = 6.dp,
+                        shadowElevation = 8.dp,
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(
+                                horizontal = CalmaSpacing.sm,
+                                vertical = CalmaSpacing.xs,
+                            ),
+                            horizontalArrangement = Arrangement.spacedBy(4.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            TopLevelDestination.entries.forEachIndexed { index, destination ->
+                                val selected = backStackEntry?.destination?.hierarchy
+                                    ?.any { it.route == destination.route } == true
+                                val navigate = {
+                                    navController.navigate(destination.route) {
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
                                     }
-                                    launchSingleTop = true
-                                    restoreState = true
                                 }
-                            },
-                            icon = {
-                                Icon(
-                                    imageVector = destination.icon,
-                                    contentDescription = null,
-                                )
-                            },
-                            label = { Text(stringResource(destination.labelRes)) },
-                        )
+                                if (index == TopLevelDestination.entries.size / 2) {
+                                    // Signature center action, like the reference design.
+                                    Surface(
+                                        shape = CircleShape,
+                                        color = MaterialTheme.colorScheme.primary,
+                                        contentColor = MaterialTheme.colorScheme.onPrimary,
+                                        modifier = Modifier
+                                            .size(56.dp)
+                                            .clickable(onClick = navigate),
+                                    ) {
+                                        Box(contentAlignment = Alignment.Center) {
+                                            Icon(
+                                                imageVector = destination.icon,
+                                                contentDescription = stringResource(
+                                                    destination.labelRes,
+                                                ),
+                                                modifier = Modifier.size(26.dp),
+                                            )
+                                        }
+                                    }
+                                } else {
+                                    IconButton(onClick = navigate) {
+                                        Icon(
+                                            imageVector = destination.icon,
+                                            contentDescription = stringResource(
+                                                destination.labelRes,
+                                            ),
+                                            tint = if (selected) {
+                                                MaterialTheme.colorScheme.primary
+                                            } else {
+                                                MaterialTheme.colorScheme.onSurfaceVariant
+                                            },
+                                        )
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

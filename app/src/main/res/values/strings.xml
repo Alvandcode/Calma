@@ -21,6 +21,7 @@
     <string name="home_tagline">A quiet moment is already here.</string>
     <string name="home_quick_calm">Calm now</string>
     <string name="home_quick_calm_caption">A 2-minute guided reset</string>
+    <string name="home_recommended">Recommended</string>
     <string name="home_daily_summary">Today so far</string>
     <string name="home_stat_focus">Focused</string>
     <string name="home_stat_sessions">Sessions</string>

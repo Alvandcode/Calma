@@ -18,6 +18,7 @@
     <string name="home_tagline">یک لحظه آرام همین حالا هم هست.</string>
     <string name="home_quick_calm">آرامش فوری</string>
     <string name="home_quick_calm_caption">بازگشت آرام در ۲ دقیقه</string>
+    <string name="home_recommended">پیشنهاد</string>
     <string name="home_daily_summary">امروز تا این لحظه</string>
     <string name="home_stat_focus">زمان تمرکز</string>
     <string name="home_stat_sessions">جلسه</string>

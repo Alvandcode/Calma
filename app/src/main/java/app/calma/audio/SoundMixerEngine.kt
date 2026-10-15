@@ -265,11 +265,17 @@ class SoundMixerEngine(
         registerNoisyReceiver()
         players.keys.filterNot { it in wanted }.forEach { players.remove(it)?.release() }
         wanted.forEach { sound ->
-            val player = players.getOrPut(sound) { createPlayer(sound) }
+            // NB: explicit get-then-put instead of getOrPut — ConcurrentHashMap forbids
+            // null values, so a failed createPlayer() would throw inside getOrPut.
+            var player = players[sound]
             if (player == null) {
-                Log.e(TAG, "Failed to create player for ${sound.id}, skipping")
-                _state.update { it.withToggled(sound.id, false) }
-                return@forEach
+                player = createPlayer(sound)
+                if (player == null) {
+                    Log.e(TAG, "Failed to create player for ${sound.id}, skipping")
+                    _state.update { it.withToggled(sound.id, false) }
+                    return@forEach
+                }
+                players[sound] = player
             }
             val layer = _state.value.layers.first { it.sound == sound }
             player.volume = layer.volume.coerceIn(0f, 1f) * _state.value.masterVolume
@@ -278,9 +284,11 @@ class SoundMixerEngine(
     }
 
     private fun resUri(sound: AmbientSound): Uri {
+        // Entry-name form, e.g. android.resource://app.calma/raw/rain.
+        // (The numeric-id form must NOT carry a ":raw" suffix in the authority —
+        // that made the URI unresolvable and silently broke all playback.)
         // context.packageName resolves to the real id, including the `.debug` suffix.
-        val authority = "${context.packageName}:raw"
-        return Uri.parse("android.resource://$authority/${sound.resId}")
+        return Uri.parse("android.resource://${context.packageName}/raw/${sound.id}")
     }
 
     private fun releasePlayers() {
