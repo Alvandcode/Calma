@@ -45,3 +45,28 @@ python tools/generate_audio.py
 ```
 
 The script writes directly to `app/src/main/res/raw/`. Commit the updated `.wav` files along with any script changes.
+
+## Replacing the sounds with your own recordings
+
+`tools/import_audio.py` converts recordings you own into assets the app can loop
+without a click:
+
+```bash
+# 1. put your files in any folder, named after the sound id
+#    (rain.wav, forest.wav, birds.wav, sea.wav, stream.wav,
+#     wind.wav, white_noise.wav, pink_noise.wav, brown_noise.wav)
+python tools/import_audio.py path/to/my/recordings
+
+# 2. check the result
+python tools/import_audio.py --verify
+```
+
+The importer downmixes to mono, resamples to 22 050 Hz, applies an equal-power loop
+cross-fade, removes DC offset and normalises the peak to −1.5 dBFS.
+
+### Licensing your own files
+
+If you replace the generated assets with third-party recordings, replace this
+section with the licence of those recordings (name, author, source URL, licence
+name) and keep a copy of the licence text. Files under CC0, CC-BY or public domain
+are the safest choice for an open-source, offline-only app.
