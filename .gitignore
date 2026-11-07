@@ -35,3 +35,6 @@ captures/
 
 # OS
 Thumbs.db
+
+# OpenCode session metadata
+calma.json
